@@ -243,22 +243,50 @@
     var app = new YOURAPPNAME(document);
 
     app.appLoad('loading', function () {
-        console.log('App is loading... Paste your app code here.');
         // App is loading... Paste your app code here. 4example u can run preloader event here and stop it in action appLoad dom or full
     });
 
     app.appLoad('dom', function () {
-        console.log('DOM is loaded! Paste your app code here (Pure JS code).');
         // DOM is loaded! Paste your app code here (Pure JS code).
         // Do not use jQuery here cause external libs do not loads here...
+
+        function dropdownMenuPositioning() {
+            var mainMenu = document.getElementsByClassName("js-main-menu")[0],
+                menuItems = mainMenu.getElementsByClassName("js-main-menu__item");
+
+            console.log(mainMenu.offsetWidth);
+            console.log(menuItems.length)
+            menuItems.onmouseover = function () {
+
+            }
+
+        }
+
+        dropdownMenuPositioning();
 
         app.initSwitcher(); // data-switcher="{target='anything'}" , data-switcher-target="anything"
     });
 
     app.appLoad('full', function (e) {
-        console.log('App was fully load! Paste external app source code here... For example if your use jQuery and something else');
         // App was fully load! Paste external app source code here... 4example if your use jQuery and something else
         // Please do not use jQuery ready state function to avoid mass calling document event trigger!
+
+        function headerBackgroundScroll() {
+            var scroll = $(window).scrollTop();
+            if (scroll >= 50) {
+                $(".js-header").addClass("header_background");
+            } else{
+                $(".js-header").removeClass("header_background");
+            }
+        };
+
+        var myTimeOut;
+
+        $(window).scroll(function() {
+            clearTimeout(myTimeOut);
+            myTimeOut = setTimeout(headerBackgroundScroll, 50);
+        });
+
     });
 
 })();

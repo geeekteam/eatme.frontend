@@ -16,42 +16,91 @@
 <meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
-<header class="header">
-    <div class="header-top">
-        <div class="header__logo">
-            <div class="logo">
-                <img src="images/logo.png" alt="">
-            </div>
+<header class="header js-header">
+    <div class="header__logo">
+        <div class="logo">
+            <a class="logo__link" href="/"><img src="images/logo.png" alt=""></a>
         </div>
-        <div class="header__nav">
-            <ul class="main-menu">
-                <li class="main-menu__item main-menu__item_dropdown">
-                    <a class="main-menu__link" href="/">Home</a>
-                    <ul class="main-menu__dropdown menu-dropdown">
+    </div>
+    <div class="header__nav">
+        <ul class="main-menu js-main-menu">
+            <li class="main-menu__item js-main-menu__item main-menu__item_dropdown">
+                <a class="main-menu__link" href="/">Home</a>
+                <div class="main-menu__dropdown js-main-menu__dropdown">
+                    <ul class="menu-dropdown js-menu-dropdown">
                         <li class="menu-dropdown__item">
                             <a href="#" class="menu-dropdown__link">Home video background</a>
                         </li>
+                        <li class="menu-dropdown__item">
+                            <a href="#" class="menu-dropdown__link">Home static image</a>
+                        </li>
                     </ul>
-                </li>
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Restaurants</a>
-                </li>
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">About us</a>
-                </li>
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">FAQ</a>
-                </li>
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Pages</a>
-                </li>
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Login</a>
-                </li>
-                <li class="main-menu__item">
-                    <a class="main-menu__link" href="#">Purchase this template</a>
-                </li>
-            </ul>
-        </div>
+                </div>
+            </li>
+            <li class="main-menu__item js-main-menu__item main-menu__item_dropdown">
+                <a class="main-menu__link" href="#">Restaurants</a>
+                <div class="main-menu__dropdown js-main-menu__dropdown">
+                    <ul class=" menu-dropdown">
+                        <li class="menu-dropdown__item">
+                            <a href="#" class="menu-dropdown__link">Home video background</a>
+                        </li>
+                        <li class="menu-dropdown__item">
+                            <a href="#" class="menu-dropdown__link">Home static image</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="main-menu__item js-main-menu__item">
+                <a class="main-menu__link" href="#">About us</a>
+            </li>
+            <li class="main-menu__item js-main-menu__item">
+                <a class="main-menu__link" href="#">FAQ</a>
+            </li>
+            <li class="main-menu__item js-main-menu__item">
+                <a class="main-menu__link" href="#">Pages</a>
+            </li>
+            <li class="main-menu__item js-main-menu__item">
+                <a class="main-menu__link" href="#">Login</a>
+            </li>
+            <li class="main-menu__item js-main-menu__item">
+                <a class="main-menu__link" href="#">Purchase this template</a>
+            </li>
+        </ul>
     </div>
 </header>
+
+<div class="subheader">
+    <div class="trailer">
+        <video class="trailer__video" width="100%" height="auto" autoplay="autoplay" loop="loop" preload="auto" muted>
+            <source src="video/book.mp4">
+            <source src="video/book.webm" type="video/webm">
+        </video>
+    </div>
+    <div class="subheader__content">
+        <h1 class="subheader__title fz68 fw300 text-white mb10">Order Takeaway or Delivery Food</h1>
+        <div class="subheader__subtitle fz20 mb20 text-white">Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.</div>
+        <form>
+            <div class="subheader__search">
+                <input class="input subheader__search-input" type="text" placeholder="Your Address or postal code">
+                <i class="subheader__search-icon"></i>
+            </div>
+        </form>
+    </div>
+    <div class="subheader__bottom">
+        <div class="subheader-bottom">
+            <div class="subheader-bottom__item">
+                <span class="fz28 text-white fw600 mr7">2650</span>
+                <span class="fz20 text-white">Restaurant</span>
+            </div>
+            <div class="subheader-bottom__item">
+                <span class="fz28 text-white fw600 mr7">5350</span>
+                <span class="fz20 text-white">People Served</span>
+            </div>
+            <div class="subheader-bottom__item">
+                <span class="fz28 text-white fw600 mr7">12350</span>
+                <span class="fz20 text-white">Registered Users</span>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -12,6 +12,10 @@ html, body
 	padding: 0
 	outline: none
 
+h1, h2, h3
+	font-family: "Lato", Helvetica, Arial, sans-serif
+	color: #333333
+
 a
 	color: inherit
 	text-decoration: none
@@ -20,15 +24,26 @@ body
 	overflow-y: scroll
 	background-color: #d5d5d5
 
-// Header start
+/* Header start ============================================================== */
 
-.header-top
-	position: relative
+.header
+	position: fixed
 	display: flex
 	justify-content: space-between
-	align-items: center
-	padding: 17px 23px 15px 15px
+	padding: 15px 15px 0 15px
+	background-color: transparent
+	width: 100%
+	z-index: 100
+
+.header_background
 	background-color: #78cfcf
+
+.js-header
+	+transition(all 0.2s ease)
+
+.logo__link
+	display: block
+	font-size: 0
 
 .main-menu
 	display: flex
@@ -36,9 +51,11 @@ body
 	list-style: none
 
 .main-menu__item
+	position: relative
 	display: flex
-	margin-right: 20px
-	padding-right: 15px
+	margin-right: 35px
+	padding-bottom: 15px
+	cursor: pointer
 	&:last-child
 		margin-right: 0
 
@@ -55,6 +72,11 @@ body
 		text-decoration: inherit
 		font-variant: normal
 		text-transform: none
+	&:hover
+		.main-menu__dropdown
+			visibility: visible
+			opacity: 1
+			top: 100%
 
 .main-menu__link
 	display: block
@@ -65,26 +87,58 @@ body
 	&:hover
 		color: #ebebeb
 
-.menu-dropdown
-	list-style: none
-
 .main-menu__dropdown
 	position: absolute
-	min-width: 170px
-	background-color: #FFFFFF
-	top: 41px
+	display: block
+	min-width: 600px
+	width: 100%
+	top: 60px
 	left: 0
+	visibility: hidden
+	opacity: 0
+	+transition(all 0.3s ease)
+
+.menu-dropdown
+	display: inline-block
+	list-style: none
+	position: relative
+	background-color: #FFFFFF
+	box-shadow: 0 6px 12px rgba(0,0,0,.175)
+	&:before
+		position: absolute
+		content: ''
+		width: 0
+		height: 0
+		top: -6px
+		left: 5%
+		transform: translateX(-5%)
+		border-style: solid
+		border-width: 0 7px 7px 7px
+		border-color: transparent transparent #ffffff transparent
+
 
 .menu-dropdown__item
 	display: block
 	cursor: pointer
 	height: auto
+	position: relative
 	+transition(all 0.5s ease)
+	&::after
+		position: absolute
+		content: ''
+		left: 0
+		bottom: 0
+		width: 100%
+		border-bottom: 1px solid #ededed
+	&:last-child
+		&::after
+			content: none
 	&:hover
 		background-color: #f9f9f9
 		.menu-dropdown__link
 			color: #ec008c
 			padding-left: 15px
+			padding-right: 5px
 
 
 .menu-dropdown__link
@@ -93,6 +147,154 @@ body
 	padding: 10px
 	+transition(all 0.5s ease)
 
+/* Header end ============================================================== */
 
 
-// Header end
+
+/* Subheader start ============================================================== */
+
+.subheader
+	display: flex
+	flex-wrap: wrap
+	flex-direction: column
+	min-height: 100%
+
+.trailer
+	position: absolute
+	overflow: hidden
+	width: 100%
+	height: 100%
+
+.trailer__video
+	filter: brightness(50%)
+	object-fit: cover
+	height: 100%
+	width: 100%
+
+.subheader__content
+	z-index: 10
+	text-align: center
+	margin: auto
+
+.subheader__search
+	position: relative
+	display: flex
+	align-items: center
+	max-width: 650px
+	margin: 0 auto
+
+.subheader__search-input
+	font-size: 18px
+	border-radius: 30px
+	width: 100%
+	padding: 15px 50px 15px 30px
+	box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.75)
+	font-weight: 600
+	color: #444444
+
+.subheader__search-icon
+	position: absolute
+	right: 20px
+	cursor: pointer
+
+.subheader__bottom
+	position: relative
+	display: flex
+	z-index: 10
+	padding: 15px 0
+	width: 100%
+	background-color: rgba(0, 0, 0, 0.25)
+
+.subheader-bottom
+	display: flex
+	margin: 0 auto
+
+.subheader-bottom__item
+	padding-right: 20px
+	margin-right: 20px
+	position: relative
+	&::after
+		position: absolute
+		content: ''
+		top: 10%
+		bottom: 10%
+		right: 0
+		border-right: 1px dotted rgba(#CCCCCC, 0.45)
+	&:last-child
+		padding-right: 0
+		margin-right: 0
+		&::after
+			content: none
+
+
+
+/* Subheader end ============================================================== */
+
+
+
+/* Main start ============================================================== */
+
+.section
+	width: 100%
+	padding: 60px 0
+
+.section__title
+	letter-spacing: -1px
+	font-size: 2.3vw
+	font-weight: 300
+
+.section__subtitle
+	font-size: 20px
+	color: #555555
+
+.container
+	width: 1170px
+	margin: 0 auto
+
+.flex-container
+	display: flex
+	justify-content: space-between
+
+.box-home
+	display: flex
+	position: relative
+	flex-direction: column
+	align-items: center
+	width: 23%
+	background: #FFFFFF
+	padding: 40px 25px
+	&:last-child
+		margin-right: 0
+
+.box-home__num
+	position: absolute
+	display: flex
+	align-items: center
+	justify-content: center
+	top: -20px
+	left: 50%
+	transform: translateX(-50%)
+	width: 40px
+	height: 40px
+	border-radius: 50%
+	border: 1px solid #ededed
+	background-color: #FFFFFF
+
+/* Main end ============================================================== */
+
+
+
+/* Elements start ============================================================== */
+
+.input
+	background-color: #FFFFFF
+	letter-spacing: normal
+	word-spacing: normal
+	text-transform: none
+	text-indent: 0px
+	text-shadow: none
+	display: inline-block
+	text-align: start
+	cursor: auto
+
+/* Elements end ============================================================== */
